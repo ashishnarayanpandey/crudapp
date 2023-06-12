@@ -1,0 +1,55 @@
+﻿@model crudapp.EmpVM.SinupLoginVM
+@{
+    ViewData["Title"] = "Sinup";
+    Layout = "~/Views/Shared/_LayoutLoginSinup.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3 border border-1 border-info rounded pr-5 pb-5 lg-5 pt-2 mt-5">
+            <div class="text-center">
+                <h1 class="text-info">User Registration form</h1>
+            </div>
+            <form method="post" asp-action="Sinup" asp-controller="Login">
+                <div class="form-group">
+                    <label asp-for="username"></label>
+                    <input class="form-control border-info" placeholder="Enter your name" asp-for="username" autocomplete="off"/>
+                    <span asp-validation-for="username" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="email"></label>
+                    <input class="form-control border-info" placeholder="Enter your email" asp-for="email" autocomplete="off" />
+                    <span asp-validation-for="email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="phone"></label>
+                    <input class="form-control border-info" placeholder="Enter your Phone Number" asp-for="phone" autocomplete="off" />
+                    <span asp-validation-for="phone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="password"></label>
+                    <input type="password" class="form-control border-info" placeholder="Enter your Password" asp-for="password" autocomplete="off" />
+                    <span asp-validation-for="password" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ReEnterPassword"></label>
+                    <input type="password" class="form-control border-info" placeholder="Confirm Password" asp-for="ReEnterPassword" autocomplete="off" />
+                    <span asp-validation-for="ReEnterPassword" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" asp-for="password" checked="checked" />
+                    <label asp-for="IsActive"></label>
+                    <span asp-validation-for="IsActive" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Registar" class="btn btn-success float-end mt-3"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
